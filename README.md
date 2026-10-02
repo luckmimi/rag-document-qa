@@ -4,6 +4,20 @@ A retrieval-augmented question answering system. Documents are chunked, embedded
 and stored in a local vector database; questions retrieve the most relevant
 chunks, which are passed to Claude as grounding with inline source citations.
 
+## Corpus
+
+`fetch_docs.py` downloads the documents rather than committing them: three
+Apache Spark documentation pages and Disney's fiscal 2025 Form 10-K from SEC
+EDGAR, with the filing's HTML flattened to text so financial tables survive as
+pipe-separated rows.
+
+The 10-K is pinned to one accession number rather than resolved to "latest" —
+the eval set's expected answers are fiscal 2025 figures, and silently pulling a
+newer filing would invalidate them.
+
+Two unrelated corpora share one index on purpose, so retrieval has to
+discriminate instead of returning whatever is nearest.
+
 ## How it works
 
 ```
@@ -29,10 +43,10 @@ export ANTHROPIC_API_KEY=sk-ant-...
 
 ## Usage
 
-Put documents in `docs/`, then:
+Fetch the corpus, index it, then ask:
 
 ```bash
-python ingest.py
+python fetch_docs.py
 python ask.py "what does the document say about X?"     # single-shot retrieval
 python agent.py "how fast did revenue grow last year?"  # agentic, multi-search
 python evals/run_eval.py                                # score against the eval set
