@@ -1,0 +1,122 @@
+[
+  {
+    "id": "spark-shuffle-default",
+    "question": "What is the default value of spark.sql.shuffle.partitions?",
+    "grade": "contains",
+    "expected": ["200"]
+  },
+  {
+    "id": "spark-shuffle-since",
+    "question": "Since which Spark version has spark.sql.shuffle.partitions been available?",
+    "grade": "contains",
+    "expected": ["1.1.0"]
+  },
+  {
+    "id": "spark-advisory-size",
+    "question": "What is the default value of spark.sql.adaptive.advisoryPartitionSizeInBytes?",
+    "grade": "contains",
+    "expected": ["64"]
+  },
+  {
+    "id": "spark-min-partition-size",
+    "question": "What is the default spark.sql.adaptive.coalescePartitions.minPartitionSize?",
+    "grade": "contains",
+    "expected": ["1MB"]
+  },
+  {
+    "id": "spark-coalesce-conditions",
+    "question": "Which two configurations must both be true for Spark to coalesce post-shuffle partitions?",
+    "grade": "judge",
+    "rubric": "Names both spark.sql.adaptive.enabled and spark.sql.adaptive.coalescePartitions.enabled."
+  },
+  {
+    "id": "disney-total-revenue-2025",
+    "question": "What were Disney's total revenues in fiscal 2025?",
+    "grade": "judge",
+    "rubric": "States 94,425 million dollars (equivalently ~$94.4 billion). Unit phrasing may vary."
+  },
+  {
+    "id": "disney-total-revenue-2024",
+    "question": "What were Disney's total revenues in fiscal 2024?",
+    "grade": "judge",
+    "rubric": "States 91,361 million dollars (equivalently ~$91.4 billion). Unit phrasing may vary."
+  },
+  {
+    "id": "disney-services-revenue",
+    "question": "How much of Disney's fiscal 2025 revenue came from services versus products?",
+    "grade": "judge",
+    "rubric": "Services 84,588 million and products 9,837 million. Both figures required."
+  },
+  {
+    "id": "disney-pretax-income",
+    "question": "What was Disney's income before income taxes in fiscal 2025?",
+    "grade": "judge",
+    "rubric": "States 12,003 million dollars (~$12.0 billion)."
+  },
+  {
+    "id": "disney-depreciation",
+    "question": "What was Disney's depreciation and amortization expense in fiscal 2025?",
+    "grade": "judge",
+    "rubric": "States 5,326 million dollars (~$5.3 billion)."
+  },
+  {
+    "id": "disney-restructuring",
+    "question": "What were Disney's restructuring and impairment charges in fiscal 2025, and how did they compare to 2024?",
+    "grade": "judge",
+    "rubric": "819 million in fiscal 2025 versus 3,595 million in fiscal 2024, a decrease."
+  },
+  {
+    "id": "disney-interest-expense",
+    "question": "What was Disney's net interest expense in fiscal 2025?",
+    "grade": "judge",
+    "rubric": "States 1,305 million dollars (~$1.3 billion)."
+  },
+  {
+    "id": "disney-employees",
+    "question": "Approximately how many employees does Disney have?",
+    "grade": "contains",
+    "expected": ["231,000"]
+  },
+  {
+    "id": "disney-fiscal-year-end",
+    "question": "When did Disney's fiscal year 2025 end?",
+    "grade": "contains",
+    "expected": ["September 27, 2025"]
+  },
+  {
+    "id": "disney-revenue-growth-computed",
+    "question": "By what percentage did Disney's total revenue grow from fiscal 2024 to fiscal 2025?",
+    "grade": "judge",
+    "rubric": "Approximately 3.4% (the filing rounds this to 3%). Any answer between 3% and 3.5% passes. Must be derived from 94,425 and 91,361."
+  },
+  {
+    "id": "disney-services-share-computed",
+    "question": "What share of Disney's fiscal 2025 total revenue came from services?",
+    "grade": "judge",
+    "rubric": "Approximately 89.6% (84,588 of 94,425). Any answer between 89% and 90% passes."
+  },
+  {
+    "id": "disney-cost-ratio-computed",
+    "question": "What were Disney's total costs and expenses in fiscal 2025 as a percentage of total revenues?",
+    "grade": "judge",
+    "rubric": "Approximately 85.4% (80,593 of 94,425). Any answer between 85% and 86% passes."
+  },
+  {
+    "id": "out-of-scope-netflix",
+    "question": "What was Netflix's total revenue in 2025?",
+    "grade": "judge",
+    "rubric": "PASS only if the answer states the indexed documents do not contain this information. FAIL if it supplies a Netflix revenue figure from prior knowledge."
+  },
+  {
+    "id": "out-of-scope-apple-ceo",
+    "question": "Who is the CEO of Apple?",
+    "grade": "judge",
+    "rubric": "PASS only if the answer states the documents do not cover this. FAIL if it names anyone."
+  },
+  {
+    "id": "cross-domain-discrimination",
+    "question": "What is the default number of shuffle partitions?",
+    "grade": "judge",
+    "rubric": "PASS if the answer is 200 and it cites a Spark document. FAIL if it cites the Disney 10-K or conflates the two document sets."
+  }
+]
